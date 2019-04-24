@@ -12,15 +12,13 @@ class ManualCoordinator:
         self.optimizeFactorGraph = rospy.ServiceProxy('optimizeFactorGraph', optimizeFactorGraph)
 
         # Listening to Joystick to call services
-        rospy.Subscriber("ak1/joy", Joy,
+        rospy.Subscriber("/ak1/joy", Joy,
                                     self.take_action)
 
     def take_action(self, msg):
-        # TODO: Change joystick buttons
-        if int(msg.axes[7]) == 1:
+        if int(msg.axes[1]) == 1:
             self.addBearingRangeNodes()
-        # TODO: Change joystick buttons
-        elif int(msg.axes[8]) == 1:
+        elif int(msg.axes[4]) == 1:
             self.optimizeFactorGraph()
 
 if __name__ == "__main__":
