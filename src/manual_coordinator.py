@@ -18,10 +18,10 @@ class ManualCoordinator:
     def take_action(self,msg):
         if int(msg.buttons[1]) == 1:
             rospy.logwarn("Button Pressed")
-            #self.ground_truth_range()
-            #self.ground_truth_bearing()
-            #self.estimate_range()
-            #self.estimate_bearing()
+            self.ground_truth_range()
+            self.ground_truth_bearing()
+            self.estimate_range()
+            self.estimate_bearing()
         # elif int(msg.axes[4]) == 1:
         #     self.optimizeFactorGraph()
 
